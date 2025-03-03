@@ -1,13 +1,15 @@
 from flask import Flask, request
+from database import Database
 
+class Server:
+    app = Flask(__name__)
+    db = Database()
 
-app = Flask(__name__)
+    @app.route('/')
+    def hello_world():
+        return str()
 
-@app.route('/')
-def hello_world():
-    return 'Hello world'
-
-@app.get('/api')
-def get_api():
-    param = request.args.get('param')
-    return {'test': 10}
+    @app.get('/api')
+    def get_api():
+        code = request.args.get('class_code')
+        return db._find_courses_by_code(code)
