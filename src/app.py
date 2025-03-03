@@ -3,7 +3,9 @@ from database import Database
 
 class Server:
     app = Flask(__name__)
-    db = Database()
+    def __init__(self):
+        
+        self.db = Database()
 
     @app.route('/')
     def hello_world():
