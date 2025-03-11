@@ -22,10 +22,12 @@ class Database:
         :type NEU_course: str
         '''
         found_entries = self.df[self.df['NEUCode'] == NEU_code]
+        if len(found_entries) == 0:
+            return None
         found_entries['College'] = found_entries['FICE'].map(self.fice_dict)
         results = found_entries[['TransferCourse', 'College']].to_numpy()
-        # print(results)
-        return list(results)
+        print(results.tolist())
+        return results.tolist()
     
     def get_available_NEU_codes(self) -> list:
         return list(self.df['NEUCode'].unique())
