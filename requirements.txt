@@ -17,6 +17,10 @@ click==8.1.8
 colorama==0.4.6
     # via click
 flask==3.1.0
+    # via
+    #   -r requirements.in
+    #   flask-cors
+flask-cors==5.0.1
     # via -r requirements.in
 idna==3.10
     # via requests
@@ -51,4 +55,6 @@ urllib3==2.3.0
 wakepy==0.10.1
     # via -r requirements.in
 werkzeug==3.1.3
-    # via flask
+    # via
+    #   flask
+    #   flask-cors
