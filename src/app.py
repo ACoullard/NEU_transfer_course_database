@@ -14,7 +14,7 @@ db = Database()
 
 @app.route('/')
 def hello_world():
-    return str()
+    return ""
 
 @app.get('/api/course')
 def get_course():
@@ -27,3 +27,6 @@ def get_course():
 def get_course_list():
     responce = db.get_codes_by_dept_dict()
     return responce
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
