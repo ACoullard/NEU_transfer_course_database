@@ -20,10 +20,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: set lower case owner name
+        run: |
+          echo "ACTOR_LC=${ACTOR,,}" >>${GITHUB_ENV}
+        env:
+          ACTOR: '${{ github.actor }}'
+
       - name: Build and push image
         uses: docker/build-push-action@v5
+        env:
+          ACTOR_LC: ${{ env.ACTOR_LC }}
         with:
           context: .
           dockerfile: Dockerfile
-          tags: ghcr.io/${{ github.actor }}/neu_transfer_course_database:latest
+          tags: ghcr.io/${{ env.ACTOR_LC }}/neu_transfer_course_database:latest
           push: true
