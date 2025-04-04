@@ -14,7 +14,7 @@ db = Database()
 
 @app.route('/')
 def hello_world():
-    return ""
+    return "hello world\nThis is the flask app"
 
 @app.get('/api/course')
 def get_course():
