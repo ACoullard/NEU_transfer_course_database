@@ -22,6 +22,8 @@ flask==3.1.0
     #   flask-cors
 flask-cors==5.0.1
     # via -r requirements.in
+gunicorn==23.0.0
+    # via -r requirements.in
 idna==3.10
     # via requests
 itsdangerous==2.2.0
@@ -34,6 +36,8 @@ markupsafe==3.0.2
     #   werkzeug
 numpy==2.2.3
     # via pandas
+packaging==24.2
+    # via gunicorn
 pandas==2.2.3
     # via -r requirements.in
 python-dateutil==2.9.0.post0

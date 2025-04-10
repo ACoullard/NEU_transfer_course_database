@@ -4,3 +4,4 @@ wakepy
 pandas
 Flask
 flask-cors
+gunicorn
