@@ -36,5 +36,5 @@ jobs:
         with:
           context: .
           dockerfile: Dockerfile
-          tags: ghcr.io/${{ env.ACTOR_LC }}/neu_transfer_course_database:latest
+          tags: ghcr.io/${{ env.ACTOR_LC }}/neu_transfer_db:latest
           push: true
